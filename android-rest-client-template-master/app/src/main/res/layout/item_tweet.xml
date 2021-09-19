@@ -34,7 +34,9 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="This is my tweet!" />
+        tools:text="This is my tweet!"
+        android:autoLink="all"
+        android:linksClickable="true"/>
 
     <TextView
         android:id="@+id/tvTime"

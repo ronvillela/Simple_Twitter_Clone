@@ -6,13 +6,16 @@
                 <item name="colorOnPrimary">@color/twitter_blue</item>
     </style>
 
-    <!-- Application theme. -->
+     Application theme.
+
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+         All customizations that are NOT specific to a particular API-level can go here.
         <item name="colorPrimary">@color/twitter_blue</item>
         <item name="colorPrimaryVariant">@color/twitter_blue</item>
         <item name="colorOnPrimary">@color/twitter_blue</item>
         <item name="android:navigationBarColor">@color/twitter_blue</item>
     </style>
 
+
 </resources>
+
