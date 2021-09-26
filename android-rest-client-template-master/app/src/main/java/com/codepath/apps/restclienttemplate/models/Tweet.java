@@ -1,20 +1,46 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.codepath.apps.restclienttemplate.TimeFormatter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
+@Parcel
+@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"))
 
 public class Tweet {
 
-    public String body;
-    public String createdAt;
+    @ColumnInfo
+    @PrimaryKey
     public long id;
+
+    @ColumnInfo
+    public String body;
+
+    @ColumnInfo
+    public String createdAt;
+
+    @ColumnInfo
+    public long userId;
+
+    @Ignore
     public User user;
+
+    // empty constructor needed by the Parceler Library
+    public Tweet() {}
 
     public String getFormattedTimesStamp() {
         return TimeFormatter.getTimeDifference(createdAt);
@@ -25,7 +51,9 @@ public class Tweet {
         tweet.body = jsonObject.getString("text");
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.id = jsonObject.getLong("id");
+        User user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
+        tweet.userId = user.id;;
         return tweet;
     }
 
@@ -35,5 +63,22 @@ public class Tweet {
             tweets.add(fromJson(jsonArray.getJSONObject(i)));
         }
         return tweets;
+    }
+
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

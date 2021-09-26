@@ -1,9 +1,10 @@
-<resources>
 
+<resources>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
                 <item name="colorPrimary">@color/twitter_blue</item>
                 <item name="colorPrimaryVariant">@color/twitter_blue</item>
                 <item name="colorOnPrimary">@color/twitter_blue</item>
+
     </style>
 
      Application theme.
@@ -14,6 +15,7 @@
         <item name="colorPrimaryVariant">@color/twitter_blue</item>
         <item name="colorOnPrimary">@color/twitter_blue</item>
         <item name="android:navigationBarColor">@color/twitter_blue</item>
+
     </style>
 
 

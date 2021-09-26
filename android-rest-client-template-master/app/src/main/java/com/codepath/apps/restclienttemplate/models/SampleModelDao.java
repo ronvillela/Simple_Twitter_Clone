@@ -21,4 +21,5 @@ public interface SampleModelDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertModel(SampleModel... sampleModels);
+
 }
